@@ -100,14 +100,14 @@ graph TD
     
     MockServer[Mock ABR/ATO Server<br/>Port 8001] <--> |HTTP| C
     
-    style A fill:#e1f5e1
-    style B fill:#e1f5e1
-    style C fill:#fff4e1
-    style D fill:#ffe1e1
-    style E fill:#ffe1e1
-    style F fill:#e1e1ff
-    style G fill:#f0e1ff
-    style MockServer fill:#fff4e1
+    style A fill:#e1f5e1,color:#000
+    style B fill:#e1f5e1,color:#000
+    style C fill:#fff4e1,color:#000
+    style D fill:#ffe1e1,color:#000
+    style E fill:#ffe1e1,color:#000
+    style F fill:#e1e1ff,color:#000
+    style G fill:#f0e1ff,color:#000
+    style MockServer fill:#fff4e1,color:#000
 ```
 
 **Key Design Principles:**
