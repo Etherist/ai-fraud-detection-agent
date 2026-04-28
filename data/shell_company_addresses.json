@@ -1,0 +1,18 @@
+{
+  "shell_indicators": [
+    "PO Box",
+    "Virtual Office",
+    "Registered Agent",
+    "Nominee Shareholder",
+    "Bearer Shares",
+    "No Physical Presence",
+    "Mail Forwarding",
+    "C/O",
+    "Care Of"
+  ],
+  "shell_addresses": [
+    "Level 1, 123 Corporate St, Sydney NSW 2000",
+    "PO Box 123, Melbourne VIC 3000",
+    "Suite 456, Virtual Office Park, Brisbane QLD 4000"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "jurisdictions": [
+    "XY",
+    "ZW",
+    "KP",
+    "AF",
+    "IQ",
+    "SD",
+    "IR",
+    "SY"
+  ],
+  "entities": [
+    "Shell Corp",
+    "Fake Biz",
+    "Phantom Ltd",
+    "Cash Business",
+    "Offshore Co",
+    "Money Service Business"
+  ],
+  "abns": [
+    "99999999999",
+    "88888888888",
+    "77777777777",
+    "66666666666"
+  ],
+  "sanctioned_countries": [
+    "XY",
+    "ZW",
+    "KP",
+    "IR",
+    "SY"
+  ],
+  "high_risk_business_types": [
+    "Money Service Business",
+    "Casino",
+    "Precious Metals Dealer",
+    "Cryptocurrency Exchange"
+  ]
+}

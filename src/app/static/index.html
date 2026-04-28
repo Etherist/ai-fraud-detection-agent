@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ AI Fraud Detection Agent - SME Loans</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ AI Fraud Detection Agent</h1>
+            <p class="subtitle">SME Loan Fraud & AML Risk Assessment | APRA APS 222 Compliant</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2>📤 Upload Application Documents</h2>
+                <form id="upload-form">
+                    <div class="file-input-group">
+                        <div class="file-input">
+                            <label for="bank-statement">
+                                <span class="icon">🏦</span>
+                                <span class="label">Bank Statement</span>
+                                <span class="format">(CSV or PDF)</span>
+                            </label>
+                            <input type="file" id="bank-statement" name="bank_statement" accept=".csv,.pdf" required>
+                        </div>
+
+                        <div class="file-input">
+                            <label for="tax-return">
+                                <span class="icon">📄</span>
+                                <span class="label">Tax Return</span>
+                                <span class="format">(CSV or PDF)</span>
+                            </label>
+                            <input type="file" id="tax-return" name="tax_return" accept=".csv,.pdf" required>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" id="analyze-btn" class="btn-primary">
+                            🔍 Analyze Application
+                        </button>
+                        <button type="button" id="demo-btn" class="btn-secondary">
+                            🎯 Load Demo Data
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="loading" class="loading-section" style="display: none;">
+                <div class="spinner"></div>
+                <p>⏳ Analyzing documents... This may take a few seconds.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </section>
+
+            <section id="results" class="results-section" style="display: none;">
+                <h2>📊 Analysis Results</h2>
+
+                <div class="results-grid">
+                    <!-- Risk Score Card -->
+                    <div class="card risk-card">
+                        <h3>Risk Score</h3>
+                        <div class="risk-gauge">
+                            <div class="gauge-container">
+                                <div class="gauge-fill" id="risk-gauge"></div>
+                                <div class="gauge-text">
+                                    <span id="risk-score">0</span>/100
+                                </div>
+                            </div>
+                            <div class="risk-category" id="risk-category"></div>
+                        </div>
+                        <div class="risk-legend">
+                            <span class="legend-item low">Low < 30</span>
+                            <span class="legend-item medium">30-70</span>
+                            <span class="legend-item high">> 70 High</span>
+                        </div>
+                    </div>
+
+                    <!-- Business Details Card -->
+                    <div class="card">
+                        <h3>Business Details</h3>
+                        <table class="info-table">
+                            <tr><td>Business Name</td><td id="business-name">-</td></tr>
+                            <tr><td>ABN</td><td id="abn">-</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- APRA Fields Card -->
+                    <div class="card apra-card">
+                        <h3>APRA APS 222 Fields</h3>
+                        <table class="info-table">
+                            <tr><td>Asset Classification</td><td id="apra-classification">-</td></tr>
+                            <tr><td>Regulatory Code</td><td id="apra-code">-</td></tr>
+                            <tr><td>Impairment Provision</td><td id="apra-provision">-</td></tr>
+                            <tr><td>LTV Ratio</td><td id="apra-ltv">-</td></tr>
+                            <tr><td>Manual Review Required</td><td id="apra-review">-</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Anomalies Section -->
+                <div class="section">
+                    <h3>⚠️ Detected Anomalies <span id="anomaly-count" class="badge">0</span></h3>
+                    <div class="table-container">
+                        <table id="anomalies-table" class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Transaction ID</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Severity</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="anomalies-body"></tbody>
+                        </table>
+                        <p id="no-anomalies" class="empty-state">No anomalies detected ✓</p>
+                    </div>
+                </div>
+
+                <!-- AML Alerts Section -->
+                <div class="section">
+                    <h3>🚨 AML Alerts <span id="aml-count" class="badge badge-critical">0</span></h3>
+                    <div id="aml-alerts" class="alerts-container"></div>
+                    <p id="no-aml" class="empty-state">No AML alerts detected ✓</p>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="summary-section">
+                    <h3>📋 Summary</h3>
+                    <div class="summary-stats">
+                        <div class="stat">
+                            <span class="stat-label">Total Transactions</span>
+                            <span class="stat-value" id="total-tx">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Flagged Transactions</span>
+                            <span class="stat-value" id="flagged-tx">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">AML Risk Items</span>
+                            <span class="stat-value" id="aml-items">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Overall Risk</span>
+                            <span class="stat-value" id="overall-risk">Low</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Section -->
+                <div class="section">
+                    <h3>📄 Reports</h3>
+                    <div class="download-buttons">
+                        <a id="download-pdf" href="#" class="btn-report" target="_blank">
+                            📥 Download PDF Report
+                        </a>
+                        <a id="download-md" href="#" class="btn-report" target="_blank">
+                            📝 View Markdown Report
+                        </a>
+                    </div>
+                </div>
+
+                <button id="new-analysis-btn" class="btn-secondary">
+                    🔄 Start New Analysis
+                </button>
+            </section>
+        </main>
+
+        <footer>
+            <p>🚀 Built with FastAPI, PyOD, and Agent Engineering | APRA APS 222 Compliant Demo</p>
+            <p><small>For educational purposes only. Not for actual lending decisions.</small></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
