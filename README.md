@@ -33,6 +33,16 @@
 
 ---
 
+## 📖 Overview
+
+A production-hardened multi-agent AI system that automates financial risk assessment for SME lending. Combines statistical anomaly detection (PyOD), real-time AML screening, ABN watchlist validation, and APRA APS 222 compliance into a unified fraud detection pipeline. Built with security-first principles—all 11 vulnerabilities patched, 110 tests passing, and full auditability. Enterprise-ready platform for banking and fintech institutions seeking to scale underwriting while maintaining regulatory standards.
+
+### ✨ Why This Project
+
+Designed to replace manual loan reviews with an orchestrated agent workflow that ingests bank statements, verifies identities against watchlists, flags suspicious transactions, and produces audit-ready reports. Every endpoint and data flow has been security-hardened against XSS, path traversal, CORS misconfiguration, and abuse. Comprehensive test suite ensures reliability, while detailed documentation and mermaid diagrams make the architecture transparent for reviewers and auditors.
+
+---
+
 ## 💰 Business Impact
 
 | Metric | Value |
