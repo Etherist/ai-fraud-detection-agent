@@ -1,5 +1,36 @@
 # 🛡️ AI Fraud Detection Agent for SME Loans
 
+
+<!-- engineering-maturity:start -->
+## Engineering status
+
+**Estimated implementation completeness: 71% — substantial working implementation.**  
+**Assessment confidence: high.**
+
+This repository contains a substantial working implementation with meaningful engineering depth. It is well beyond a mock-up or portfolio shell; remaining work is focused on completing secondary paths, strengthening verification and hardening delivery.
+
+**What is already significant:** a substantive implemented codebase with multiple functional components; a meaningful automated verification suite; CI/automation is represented in the repository; reproducible build/dependency metadata is present.
+
+**Remaining engineering work:** resolve the explicit unfinished paths visible in the inspected code sample (1 marker); complete deployment and operational hardening.
+
+**Production readiness:** Production readiness is not claimed yet. The project is better described as a substantial working implementation progressing through verification and hardening.
+
+| Evidence area | Remote repository evidence |
+| --- | --- |
+| Implementation | 25 source files; approximately 132 KiB of source code |
+| Verification | 12 test files; approximately 50 KiB of test code |
+| Automation | 2 GitHub Actions workflow(s) |
+| Build/configuration | 3 build/dependency manifest(s); 3 configuration file(s) |
+| Deployment | 0 deployment/runtime packaging asset(s) |
+| Documentation/examples | 11 documentation file(s); 0 example/demo file(s) |
+| Remote code inspection | 36 evidence-rich files read; 0 TODO/FIXME marker(s); 1 explicit unfinished marker(s) |
+
+
+> **Status precedence:** This evidence-based assessment supersedes older broad maturity wording elsewhere in this README where the two conflict.
+
+<sub>Engineering estimate refreshed 2026-09-25 from GitHub repository metadata and remotely read source/test/configuration files. It is an evidence-based maturity estimate, not a claim that every runtime path has been independently executed or externally certified.</sub>
+<!-- engineering-maturity:end -->
+
 **Production-Ready Multi-Agent System for Automated Fraud & AML Risk Assessment | APRA APS 222 Compliant**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
