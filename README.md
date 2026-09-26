@@ -31,17 +31,14 @@ This repository contains a substantial working implementation with meaningful en
 <sub>Engineering estimate refreshed 2026-09-25 from GitHub repository metadata and remotely read source/test/configuration files. It is an evidence-based maturity estimate, not a claim that every runtime path has been independently executed or externally certified.</sub>
 <!-- engineering-maturity:end -->
 
-**Substantial Working Implementation Multi-Agent System for Automated Fraud & AML Risk Assessment | APRA APS 222 Compliant**
+**Substantial Multi-Agent Implementation for Automated Fraud & AML Risk Assessment | APS 222-Oriented Reporting**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-009688.svg)](https://fastapi.tiangolo.com/)
 [![PyOD](https://img.shields.io/badge/PyOD-1.0.7-orange.svg)](https://github.com/yzhao062/pyod)
 [![Jinja2](https://img.shields.io/badge/Jinja2-%3E=3.1.3-00A1D6.svg)](https://jinja.palletsprojects.com/)
-[![APRA APS 222](https://img.shields.io/badge/APRA_APS_222-Compliant-003366.svg)](https://www.apra.gov.au/)
-[![Security](https://img.shields.io/badge/security-audited-brightgreen.svg)]()
-[![Test Coverage](https://img.shields.io/badge/coverage-100%25-success.svg)]()
-[![CI](https://github.com/your-username/ai-fraud-detection-sme/actions/workflows/test.yml/badge.svg)](https://github.com/your-username/ai-fraud-detection-sme/actions)
+[![APRA APS 222](https://img.shields.io/badge/APRA_APS_222-Oriented-003366.svg)](https://www.apra.gov.au/)
 
 ---
 
@@ -55,8 +52,8 @@ This repository contains a substantial working implementation with meaningful en
 - [Full Demo](#-full-demo)
 - [CLI Usage](#-cli-usage)
 - [Testing](#-testing)
-- [Security Hardened](#-security-hardened)
-- [APRA Compliance](#-apra-compliance)
+- [Security Controls](#-security-controls)
+- [APS 222 Alignment](#-aps-222-alignment)
 - [Documentation](#-documentation)
 - [Performance](#-performance)
 - [Deployment](#-deployment)
@@ -66,11 +63,11 @@ This repository contains a substantial working implementation with meaningful en
 
 ## 📖 Overview
 
-A production-hardened multi-agent AI system that automates financial risk assessment for SME lending. Combines statistical anomaly detection (PyOD), real-time AML screening, ABN watchlist validation, and APRA APS 222 compliance into a unified fraud detection pipeline. Built with security-first principles—all 11 vulnerabilities patched, 110 tests passing, and full auditability. Enterprise-ready platform for banking and fintech institutions seeking to scale underwriting while maintaining regulatory standards.
+A substantial multi-agent AI implementation for SME lending fraud and AML risk assessment. It combines statistical anomaly detection (PyOD), AML/watchlist screening, mock ABR/ATO validation, fixed-threshold risk scoring, and APS 222-oriented reporting fields in a unified demonstration pipeline. The repository includes web and CLI interfaces, an automated test suite, concrete security controls, audit-oriented reports, and extensive technical documentation. Real registry integrations, deployment packaging, CI stabilisation, and regulatory validation remain active engineering work.
 
 ### ✨ Why This Project
 
-Designed to replace manual loan reviews with an orchestrated agent workflow that ingests bank statements, verifies identities against watchlists, flags suspicious transactions, and produces audit-ready reports. Every endpoint and data flow has been security-hardened against XSS, path traversal, CORS misconfiguration, and abuse. Comprehensive test suite ensures reliability, while detailed documentation and mermaid diagrams make the architecture transparent for reviewers and auditors.
+Designed to automate key parts of the loan-review workflow: ingesting bank statements, checking identities against watchlists, flagging suspicious transactions, scoring risk, and producing audit-oriented reports. Implemented controls include input validation, file-size limits, CORS configuration, rate limiting, XSS prevention, path restrictions, and temporary-file cleanup. Detailed documentation and Mermaid diagrams make the architecture and current limitations transparent for technical review.
 
 ---
 
@@ -79,10 +76,10 @@ Designed to replace manual loan reviews with an orchestrated agent workflow that
 | Metric | Value |
 |--------|-------|
 | **Fraud Loss Reduction** | Automated flagging of high-risk applications |
-| **Manual Review Time** | ↓ 70% (estimated for SME underwriting) |
-| **AML Compliance** | Full APRA APS 222 & AUSTRAC alignment |
+| **Manual Review Workflow** | Automated triage, scoring and report generation; operational savings not yet production-measured |
+| **Regulatory Alignment** | APS 222-oriented reporting fields and AML demonstration logic; no certification/accreditation claimed |
 | **Report Generation** | Instant PDF/Markdown with audit trail |
-| **Processing Speed** | 2–3 seconds per application (local) |
+| **Processing Speed** | ~2–3 seconds per seeded demo application on the documented local setup |
 
 ---
 
@@ -94,14 +91,14 @@ Designed to replace manual loan reviews with an orchestrated agent workflow that
 - ✅ **7 Autonomous Agents** – Fully decoupled, testable agent architecture
 - ✅ **PyOD Isolation Forest** – Statistical anomaly detection on transaction amounts
 - ✅ **AML Watchlist Screening** – High-risk jurisdictions, entities, ABNs, shell companies
-- ✅ **Real-Time API Lookups** – Mock ABR (business registry) & ATO (tax) validation
-- ✅ **APRA APS 222 Compliance** – Asset classification, impairment provisions, regulatory codes
+- ✅ **Mock Registry API Workflow** – Simulated ABR (business registry) & ATO (tax) validation
+- ✅ **APS 222-Oriented Reporting** – Demonstration asset-classification, impairment and regulatory-code fields
 - ✅ **Fixed Threshold Scoring** – Reproducible risk categories (Low/Medium/High)
 - ✅ **Audit-Ready Reports** – PDF (ReportLab) + Markdown (Jinja2) with visualizations
 - ✅ **Modern Web UI** – Responsive HTML/JavaScript frontend with risk gauge
 - ✅ **RESTful API** – FastAPI backend with auto-generated OpenAPI docs
 - ✅ **Command-Line Interface** – Full-featured CLI for automation
-- ✅ **Comprehensive Test Suite** – 110 tests across all modules (100% pass)
+- ✅ **Automated Test Suite** – 110 tests defined across the implementation; current CI requires attention
 
 ---
 
@@ -146,7 +143,7 @@ graph TD
 - **Separation of Concerns** – Each agent has a single, well-defined responsibility
 - **Dependency Injection Ready** – Agents can be instantiated with config params
 - **Stateless Processing** – Uploads processed synchronously; results stored in-memory (demo)
-- **Production-Ready Patterns** – Error handling, logging, type hints, docstrings
+- **Production-Oriented Engineering Patterns** – Error handling, logging, type hints and docstrings
 - **Security First** – Input validation, file size limits, CORS, rate limiting, XSS prevention
 
 ---
@@ -218,7 +215,7 @@ sequenceDiagram
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-username/ai-fraud-detection-sme.git
+git clone https://github.com/Etherist/ai-fraud-detection-agent.git
 cd ai-fraud-detection-agent
 
 # 2. Create virtual environment
@@ -304,7 +301,7 @@ python3 src/app/cli.py \
 ```
 ============================================================
 🛡️  AI Fraud Detection Agent for SME Loans
-   CLI Mode - APRA APS 222 Compliant
+   CLI Mode - APS 222-Oriented Reporting Demo
 ============================================================
 
 📄 Bank Statement: data/sample_bank_statements.csv
@@ -335,7 +332,7 @@ Interactive step-by-step walkthrough of the agent pipeline with live code.
 
 ## 🧪 Testing
 
-**Full test suite:** 110 tests across 9 modules – **100% pass rate**
+**Test suite:** 110 tests are defined across the repository. Re-run locally or in CI to verify the current pass state.
 
 ```bash
 # Run all tests
@@ -368,7 +365,7 @@ black src/ --check
 
 ---
 
-## 🔒 Security Hardened
+## 🔒 Security Controls
 
 This project implements **defense-in-depth** security measures:
 
@@ -395,9 +392,9 @@ This project implements **defense-in-depth** security measures:
 
 ---
 
-## 📜 APRA APS 222 Compliance
+## 📜 APS 222 Alignment
 
-The system generates reports with **APRA-regulated fields** for Australian Prudential Regulation Authority compliance.
+The system generates demonstration reporting fields mapped to selected APS 222 concepts. This is an engineering implementation aid, not APRA certification, accreditation, or a substitute for regulatory review.
 
 ### APRA Fields Included
 
@@ -421,7 +418,7 @@ Score < 30   → Standard      (0% impairment)
 Score ≥ 90   → Loss          (100% impairment)
 ```
 
-**Detailed compliance documentation:** See [`docs/apra_compliance.md`](docs/apra_compliance.md)
+**Detailed APS 222 mapping documentation:** See [`docs/apra_compliance.md`](docs/apra_compliance.md)
 
 ---
 
@@ -435,7 +432,7 @@ All documentation is in the `/docs` folder:
 | [`docs/architecture.md`](docs/architecture.md) | System design, deployment diagrams, data flow |
 | [`docs/agent_workflow.md`](docs/agent_workflow.md) | Detailed agent interaction sequences |
 | [`docs/api_reference.md`](docs/api_reference.md) | Complete FastAPI endpoint specs (Swagger/ReDoc) |
-| [`docs/apra_compliance.md`](docs/apra_compliance.md) | APS 222 alignment, regulatory mapping |
+| [`docs/apra_compliance.md`](docs/apra_compliance.md) | APS 222-oriented field mapping and regulatory design notes |
 | [`docs/data_format.md`](docs/data_format.md) | Input CSV/PDF schema specifications |
 | [`docs/demo_guide.md`](docs/demo_guide.md) | Step-by-step demo walkthrough with screenshots |
 | [`docs/QUICKSTART.md`](docs/QUICKSTART.md) | 5-minute setup guide |
@@ -444,15 +441,15 @@ All documentation is in the `/docs` folder:
 
 ---
 
-## 📊 Performance Metrics
+## 📊 Demonstration Performance Metrics
 
 | Metric | Target | Achieved |
 |--------|--------|----------|
-| **Detection Accuracy** | ≥90% | ~95% (on seeded demo cases) |
-| **Processing Speed** | <10s for 100 tx | ~2–3s (local machine) |
+| **Detection Accuracy** | Demonstration target ≥90% | ~95% on seeded demo cases; not a real-world validation result |
+| **Processing Speed** | Demo target <10s for 100 tx | ~2–3s on the documented local seeded demo |
 | **API Latency** | <1s | ~200ms (mock server) |
-| **False Positive Rate** | <5% | ~3% (demo-tuned) |
-| **Test Pass Rate** | 100% | ✅ 110/110 |
+| **False Positive Rate** | Demonstration target <5% | ~3% on demo-tuned seeded cases; not production validation |
+| **Test Suite** | 110 tests defined | Current collected CI run is failing; re-run to verify current status |
 
 ---
 
@@ -468,7 +465,9 @@ python3 scripts/mock_api_server.py
 uvicorn src.app.main:app --reload --port 8000
 ```
 
-### Docker
+### Illustrative Docker Packaging
+
+The repository snapshot does not currently include a Dockerfile. The following is an example packaging definition that can be added when deployment hardening is undertaken.
 
 ```dockerfile
 FROM python:3.11-slim
@@ -750,8 +749,8 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 - **LinkedIn**: [My LinkedIn Profile](https://www.linkedin.com/in/robert-b-7aba31a/)
 - **Portfolio**: [perspicacious.au](https://perspicacious.au)
 - **Email**: perspicacious@tuta.io
-- **Issues:** [GitHub Issues](https://github.com/your-username/ai-fraud-detection-sme/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/your-username/ai-fraud-detection-sme/discussions)
+- **Issues:** [GitHub Issues](https://github.com/Etherist/ai-fraud-detection-agent/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/Etherist/ai-fraud-detection-agent/discussions)
 
 
 ---
@@ -774,7 +773,7 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 | **Full Documentation** | [`docs/README.md`](docs/README.md) |
 | **Architecture Deep Dive** | [`docs/architecture.md`](docs/architecture.md) |
 | **API Reference** | [`docs/api_reference.md`](docs/api_reference.md) |
-| **APRA Compliance** | [`docs/apra_compliance.md`](docs/apra_compliance.md) |
+| **APS 222 Alignment** | [`docs/apra_compliance.md`](docs/apra_compliance.md) |
 | **Demo Guide** | [`docs/demo_guide.md`](docs/demo_guide.md) |
 | **Quick Start** | [`docs/QUICKSTART.md`](docs/QUICKSTART.md) |
 | **Project Summary** | [`docs/PROJECT_SUMMARY.md`](docs/PROJECT_SUMMARY.md) |
